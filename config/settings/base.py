@@ -79,19 +79,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'OPTIONS': {
-    #         'options': '-c search_path=cornleaf',
-    #     },
-    #     'NAME': 'zzfqjrfs',
-    #     'USER': 'zzfqjrfs',
-    #     'HOST': 'satao.db.elephantsql.com',
-    #     'PASSWORD': 'eYfiZRYBwjV8lSj62SzKECW9IaRt77Ru',
-    #     'PORT': '5432',
-    #     'CONN_MAX_AGE': 0,
-    #     'MAX_CONNECTIONS': 10
-    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
@@ -103,10 +90,6 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'PORT': '5432',
     }
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # }
 }
 
 
