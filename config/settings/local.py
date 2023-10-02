@@ -1,11 +1,11 @@
 """Local settings."""
-from .base import BASE_DIR, INSTALLED_APPS
+from .base import * # noqa:
 
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3", # noqa:
     }
 }
 

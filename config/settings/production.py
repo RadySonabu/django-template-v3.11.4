@@ -1,5 +1,5 @@
 """Production Settings."""
-from .base import os
+from .base import * # noqa:
 
 
 DATABASES = {
@@ -8,10 +8,10 @@ DATABASES = {
         "OPTIONS": {
             "options": "-c search_path=django-template-3.11.4",
         },
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
+        "NAME": os.getenv("DB_NAME"), # noqa:
+        "USER": os.getenv("DB_USER"), # noqa:
+        "PASSWORD": os.getenv("DB_PASSWORD"), # noqa:
+        "HOST": os.getenv("DB_HOST"), # noqa:
         "PORT": "5432",
     }
 }
