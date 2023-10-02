@@ -1,6 +1,6 @@
 """URLS for user app."""
 from django.urls import path
-from .views import index
+from .views import indexRate
 
 
-urlpatterns = [path("", index, name="index")]
+urlpatterns = [path("", indexRate, name="index")]
