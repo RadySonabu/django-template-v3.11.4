@@ -1,4 +1,6 @@
-from .base import *
+"""Local settings."""
+from .base import BASE_DIR, INSTALLED_APPS
+
 
 DATABASES = {
     "default": {
@@ -11,4 +13,4 @@ DATABASES = {
 INSTALLED_APPS = ["whitenoise.runserver_nostatic"] + INSTALLED_APPS  # noqa F405
 
 # django-debug-toolbar
-INSTALLED_APPS += ["debug_toolbar"] 
+INSTALLED_APPS += ["debug_toolbar"]
