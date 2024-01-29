@@ -13,34 +13,25 @@
   </head>
   <body>
     {% load crispy_forms_tags  %}
-
     {% block body %}
 
-    {% if messages %}
-    <div>
-      <strong>{% trans "Messages:" %}</strong>
-      <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    {% comment %} <div>
-      <strong>{% trans "Menu:" %}</strong>
-      <ul>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'account_email' %}">{% trans "Change Email" %}</a></li>
-        <li><a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a></li>
-        {% else %}
-        <li><a href="{% url 'account_login' %}">{% trans "Sign In" %}</a></li>
-        <li><a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
-        {% endif %}
-      </ul>
-    </div> {% endcomment %}
     <div class="position-absolute top-50 start-50 translate-middle">
+        {% if messages %}
+        <div>
+          
+          <ul>
+            {% for message in messages %}
+          <div class="d-grid gap-2">
+
+            <div class="btn btn-{{message.tags}}">{{message}}</div>
+          </div>
+          
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
       <div class="card p-5  shadow-sm p-3 mb-5 bg-body rounded">
+
         {% block content %}
         {% endblock %}
       </div>
