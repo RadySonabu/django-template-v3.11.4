@@ -45,7 +45,8 @@ LOCAL_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
-    "crispy_bootstrap5",
+    # "crispy_bootstrap5",
+    "crispy_tailwind",
     "rest_framework",
     "corsheaders",
     "allauth",
@@ -53,6 +54,7 @@ THIRD_PARTY_APPS = [
     # 'allauth.account.middleware',
     # 'allauth.account.middlewareallauth',
     "allauth.socialaccount",
+    "tailwind",
 ]
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -130,20 +132,16 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME":
-            "django.contrib.auth.password_validation.UserAttributeSimilarityValidator", # noqa:
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa:
     },
     {
-        "NAME":
-            "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa:
     },
     {
-        "NAME":
-            "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa:
     },
     {
-        "NAME":
-            "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa:
     },
 ]
 
@@ -171,10 +169,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # bootstrap
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "tailwind"
+# CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+# CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -203,4 +203,4 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 
-ACCOUNT_FORMS = {'login': 'apps.users.forms.MyCustomLoginForm'}
+ACCOUNT_FORMS = {"login": "apps.users.forms.MyCustomLoginForm"}

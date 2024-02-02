@@ -1,24 +1,28 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
-{% load crispy_forms_tags  %}
+{% load tailwind_filters %}
+
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+<div class="max-w-sm min-w-96">
+  <h1 class="text-3xl font-extrabold text-gray-800">{% trans "Create your account" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form | crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <div class="d-grid gap-2">
-    <button class="btn btn-full btn-primary" type="submit">{% trans "Sign Up" %}</button>
+  <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form | crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <div class="flex">
+      <input class="bg-blue-700 rounded-3xl p-3 w-full text-white hover:bg-blue-900" type="submit" value="{% trans 'Sign Up' %}" />
   </div>
-</form>
+  </form>
+</div>
 
 {% endblock %}
