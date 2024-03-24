@@ -7,7 +7,7 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="max-w-sm min-w-96">
+<div class=" max-w-sm min-w-96">
   <h1 class="text-3xl font-extrabold text-gray-800">{% trans "Create your account" %}</h1>
 
 
@@ -19,9 +19,7 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <div class="flex">
-      <input class="bg-blue-700 rounded-3xl p-3 w-full text-white hover:bg-blue-900" type="submit" value="{% trans 'Sign Up' %}" />
-  </div>
+    <button class="btn w-full p-1 m-1 sm:btn-sm md:btn-md lg:btn-lg" type="submit">{% trans "Sign up" %}</button>
   </form>
 </div>
 

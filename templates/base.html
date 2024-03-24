@@ -21,18 +21,22 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script> {% endcomment %}
+    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
   </head>
   <body>
     {% block content %} 
-      {% if user.is_authenticated %}
-        <!-- Content to display when the user is authenticated -->
-        {% include "private_home.html" %} 
-      {% else %}
-        <!-- Content to display when the user is not authenticated -->
-        {% include "account/login.html" %} 
-      {% endif %} 
+      <div class='bg-slate-100'>
+        {% if user.is_authenticated %}
+          <!-- Content to display when the user is authenticated -->
+          {% include "private_home.html" %} 
+        {% else %}
+          <!-- Content to display when the user is not authenticated -->
+          {% include "account/login.html" %} 
+        {% endif %} 
+      </div>
     {% endblock content %}
   </body>
 </html>

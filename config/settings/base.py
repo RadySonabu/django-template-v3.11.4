@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -202,5 +203,6 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_LOGOUT_ON_GET = True
 
 ACCOUNT_FORMS = {"login": "apps.users.forms.MyCustomLoginForm"}
